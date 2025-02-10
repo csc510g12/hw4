@@ -1,33 +1,18 @@
 #!/bin/bash
-
-# Check if a file path is provided
-if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <sample_path>"
-    exit 1
-fi
-
-sample_path="$1"
-
-# Find all lines containing "banana"
 echo "Lines containing 'banana':"
-grep "banana" "$sample_path"
-echo
+grep "banana" sample.txt
 
-# Find lines that do not contain "banana"
-echo "Lines NOT containing 'banana':"
-grep -v "banana" "$sample_path"
-echo
+echo "Lines that do not contain 'banana':"
+grep -v "banana" sample.txt
 
-# Get unique lines from the file
-echo "Unique lines in the file:"
-sort "$sample_path" | uniq
-echo
+echo "Unique lines:"
+sort "sample.txt" | uniq > sample_unique.txt
+cat sample_unique.txt
 
-# Count occurrences of each unique line
-echo "Unique lines with counts:"
-sort "$sample_path" | uniq -c | awk '{print $2": "$1}'
-echo
+echo "Unique count:"
+sort "sample.txt" | uniq -c > sample_unique_count.txt
+cat sample_unique_count.txt
 
-# Count occurrences of lines containing "banana"
-echo "Occurrences of lines containing 'banana':"
-grep "banana" "$sample_path" | sort | uniq -c | awk '{print $2": "$1}'
+echo "Count bananas:"
+sort "sample.txt" | grep "banana" sample.txt | uniq -c > banana_count.txt
+cat banana_count.txt

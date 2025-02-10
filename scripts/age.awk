@@ -1,8 +1,20 @@
-BEGIN { FS=","; sum=0; count=0 }
-NR > 1 && $6 != "" { sum += $6; count++ } 
-END { 
-    if (count > 0) 
-        print "Average Age: " sum/count 
-    else 
-        print "No age data available"
+#!/usr/bin/awk -f
+
+BEGIN {
+	FS = ","
+	tot = 0
+	count = 0
+}
+
+NR > 1 {
+	if ($7 != "") {
+		tot += $7
+		count++
+	}
+	
+}
+
+END {
+	avg_age = tot / count
+	print "Average Age of Passengers: " avg_age
 }

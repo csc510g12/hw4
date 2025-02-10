@@ -1,1 +1,0 @@
-head -n 5 titanic.csv

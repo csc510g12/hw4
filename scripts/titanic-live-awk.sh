@@ -1,1 +1,0 @@
-awk -f live.awk titanic.csv
