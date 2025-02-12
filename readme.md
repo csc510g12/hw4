@@ -20,4 +20,4 @@ How to run scripts:
 - [Task 5: Average Age Calculation (age.awk)](scripts/titanic-age-awk.sh)
 - [Task 6: Survival Rates by Class (live.awk)](scripts/titanic-live-awk.sh)
 
-Since all the group member are required to do the the same tasks, we just keep one set of scripts in the main branch.
+Since all the group member are required to do the the same tasks, we just keep one set of scripts in the main branch. See also other [branches](https://github.com/csc510g12/hw4/branches).
